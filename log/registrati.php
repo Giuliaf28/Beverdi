@@ -1,31 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="ajax/log.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Registrazione</title>
+    <script src="../ajax/log.js" defer></script>
 </head>
 <body>
-    <h1>Crea il tuo profilo!</h1>
-    <form action="gestoreRegistrazione.php" method="post">
-        username <br>
-        <input type="text" name="username" class="login"><br><br>
-        password<br>
-        <input type="password" name="password" class="login"><br>
-        <button type="button" onclick="mostraPassword()">mostra password</button><br><br>
 
-        conferma password<br>
-        <input type="password" name="password2" class="login"><br><br>
+<h2>Registrazione</h2>
 
-        data di nascita<br>
-        <input type="date" name="dataNascita" class="login"><br><br>
+<form id="regForm" action="gestoreRegistrazione.php" method="post">
+    <label>Username:
+        <input type="text" name="username">
+    </label><br><br>
 
-        pfp<br>
-        <input type="file" name="pfp" class="login"><br><br>
+    <label>Password:
+        <input type="password" name="password">
+        <button type="button" id="togglePassword">👁️</button>
+    </label><br><br>
 
-        <input type="submit" value="Registrati" onclick="controlloValori(event)">
-    </form>
+    <label>Conferma Password:
+        <input type="password" name="password2">
+    </label><br><br>
+
+    <label>Data di nascita:
+        <input type="date" name="dataNascita">
+    </label><br><br>
+
+    <label>Foto profilo:
+        <input type="file" name="fotop" accept=".jpg, .jpeg, .png">
+    </label><br><br>
+
+    <input type="submit" value="Registrati">
+</form>
+
 </body>
 </html>
