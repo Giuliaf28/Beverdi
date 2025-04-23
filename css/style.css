@@ -1,0 +1,26 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Distanza tra i div */
+    justify-content: space-between;
+    padding: 20px;
+}
+#drink{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    text-align: center;
+
+}
+
+#login{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    text-align: center;
+}
+
