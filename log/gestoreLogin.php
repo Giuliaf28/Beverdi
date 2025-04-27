@@ -1,27 +1,33 @@
 <?php
+session_start(); // 1. Mancava questo!
+
 require_once 'conn.php';
+
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
-
-//controllo query
+// Controllo query
 $stmt = $conn->prepare("SELECT * FROM utenti WHERE username = ? AND password = ?");
 $stmt->bind_param("ss", $username, $password);
 $stmt->execute();
 
-
 $result = $stmt->get_result();
+
+// Qui serve prendere la riga!
+$user = $result->fetch_assoc();
+print_r($user); // Debug: mostra l'array associativo
 $stmt->close();
 
-if ($result->num_rows == 0) {
-
-    header("Location: login.php?msg=Credenziali non trovate, registrati <a href=registrati.php>qui</a> !");
+// Controlli
+if (!$user) {
+    // Nessun utente trovato
+    header("Location: login.php?msg=Credenziali non trovate");
+    //echo "Credenziali non trovate: $username / $password";
     exit();
 } else {
-    $_SESSION['username'] = $username;
+    // Utente trovato
+    $_SESSION['username'] = $user['username'];
     header("Location: ../profilo.php?msg=Benvenuto $username !");
-    exit;
+    //echo "Benvenuto " . $_SESSION['username'];
+    exit();
 }
-
-
-?>

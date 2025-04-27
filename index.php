@@ -14,15 +14,17 @@ if(!isset($_SESSION))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beverdì</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="ajax/main.js"></script>
+   <script src="ajax/main.js"></script>
 
 </head>
 
 <body>
     <h1>Benvenuto al Beverdì</h1>
     <h3>Qui troverai un quantitativo sufficiente di cockatail per sceglierne uno diverso dal Gin Lemon</h3>
-    <a href="log/login.php"><button>Crea la tua ricetta !</button></a>
+    <label for="">Accedi per poter (salvare i tuoi cocktail preferiti e )per sbloccare la modalità party</label><a href="log/login.php"><button>ACCEDI!</button></a><br>
+    <label for="">Non hai un account? Registrati</label><a href="log/registrati.php"><button>REGISTRATI!</button></a>
     <div id="container"></div>
+    <a href="free_access/allCockails.php"><button>see more</button></a>
 </body>
 
 </html>

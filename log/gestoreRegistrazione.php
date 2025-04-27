@@ -1,7 +1,7 @@
 <?php
 require_once("conn.php");
 $username = $_POST['username'];
-$password = md5($_POST['password']);
+$password =MD5($_POST['password']);
 $dataNascita = $_POST['dataNascita'];
 $foto = $_POST['fotop'];
 
@@ -17,6 +17,7 @@ $stmt->bind_param("ssss", $username, $password, $dataNascita, $foto);
 $stmt->execute();
 $stmt->close();
 
+$_SESSION['username'] = $username;
 header("Location: ../profilo.php?msg=Registrazione avvenuta con successo!!");
 exit;
 ?>

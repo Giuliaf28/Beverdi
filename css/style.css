@@ -5,15 +5,15 @@
     justify-content: space-between;
     padding: 20px;
 }
-#drink{
+#drink {
     background-color: #f0f0f0;
     border-radius: 10px;
-    border-color: black;
-    border-width: 3px;
-    border-style: solid;
-    text-align: center;
+    border: 3px solid black; /* Combined border properties */
+    text-align: center; /* Center the text */
+    display: flex; /* Added to center text vertically */
 
 }
+
 
 #login{
     background-color: #f0f0f0;
