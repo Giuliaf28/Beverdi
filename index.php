@@ -21,8 +21,8 @@ if(!isset($_SESSION))
 <body>
     <h1>Benvenuto al Beverdì</h1>
     <h3>Qui troverai un quantitativo sufficiente di cockatail per sceglierne uno diverso dal Gin Lemon</h3>
-    <label for="">Accedi per poter (salvare i tuoi cocktail preferiti e )per sbloccare la modalità party</label><a href="log/login.php"><button>ACCEDI!</button></a><br>
-    <label for="">Non hai un account? Registrati</label><a href="log/registrati.php"><button>REGISTRATI!</button></a>
+    <label for="">Accedi per poter (salvare i tuoi cocktail preferiti e )per sbloccare la modalità party </label><a href="log/login.php"><button>ACCEDI!</button></a><br>
+    <label for="">Non hai un account? <a href="log/registrati.php">Registrati</a> </label>
     <div id="container"></div>
     <a href="free_access/allCockails.php"><button>see more</button></a>
 </body>

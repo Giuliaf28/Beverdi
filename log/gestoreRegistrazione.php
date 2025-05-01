@@ -5,6 +5,9 @@ $password =MD5($_POST['password']);
 $dataNascita = $_POST['dataNascita'];
 $foto = $_POST['fotop'];
 
+if(!isset($foto) || $foto == "" || $foto == null) {
+    $foto = "../img/default.png";}
+
 $q="SELECT * FROM utenti WHERE username = '$username' AND password = '$password'";
 $result = $conn->query($q);
 if($result->num_rows > 0) {
@@ -18,6 +21,9 @@ $stmt->execute();
 $stmt->close();
 
 $_SESSION['username'] = $username;
-header("Location: ../profilo.php?msg=Registrazione avvenuta con successo!!");
-exit;
+$_SESSION['dataNascita'] = $dataNascita;
+$_SESSION['pfp'] = $foto;
+
+//header("Location: ../profilo.php?msg=Registrazione avvenuta con successo!!");
+//exit;
 ?>

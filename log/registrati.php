@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrazione</title>
-    <script src="../ajax/log.js" defer></script>
+    <script src="log.js" defer></script>
 </head>
 <body>
 
