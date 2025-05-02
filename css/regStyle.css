@@ -1,0 +1,107 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #d4d9ff, #f0e9ff);
+    color: #2d2d44;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Contenitore del form */
+.container {
+    background-color: #ffffffcc;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Titoli */
+.container h2, .container h1 {
+    color: #4b4efc;
+    margin-bottom: 20px;
+}
+
+/* Campi form */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+form label input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form button {
+    margin-top: 8px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Pulsante submit */
+input[type="submit"] {
+    background-color: #4b4efc;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #3a3dca;
+}
+
+/* Link login/registrazione */
+.login-link, .register-link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #444b77;
+}
+
+.login-link a, .register-link a {
+    color: #4b4efc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link a:hover, .register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Messaggi GET */
+.msg {
+    background-color: #e0e7ff;
+    color: #3c3c78;
+    border: 1px solid #c4d0ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}

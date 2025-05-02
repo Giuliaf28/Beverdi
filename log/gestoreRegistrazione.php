@@ -20,10 +20,10 @@ $stmt->bind_param("ssss", $username, $password, $dataNascita, $foto);
 $stmt->execute();
 $stmt->close();
 
-$_SESSION['username'] = $username;
-$_SESSION['dataNascita'] = $dataNascita;
-$_SESSION['pfp'] = $foto;
+echo $_SESSION['username'] = $username;
+echo $_SESSION['dataNascita'] = $dataNascita;
+echo $_SESSION['pfp'] = $foto;
 
-//header("Location: ../profilo.php?msg=Registrazione avvenuta con successo!!");
-//exit;
+header("Location: ../profilo.php?msg=Registrazione avvenuta con successo!!");
+exit;
 ?>

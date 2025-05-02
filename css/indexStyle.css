@@ -1,0 +1,105 @@
+
+#drink {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: 3px solid black; /* Combined border properties */
+    text-align: center; /* Center the text */
+    display: flex; /* Added to center text vertically */
+
+}
+
+
+/* Reset di base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #d4d9ff, #f0e9ff);
+    color: #2d2d44;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Titolo principale */
+h1 {
+    font-size: 2.5rem;
+    color: #4b4efc;
+    margin-bottom: 10px;
+}
+
+/* Sottotitolo */
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #444b77;
+}
+
+/* Messaggio da GET */
+.msg {
+    background-color: #e0e7ff;
+    color: #3c3c78;
+    border: 1px solid #c4d0ff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Etichette */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+label a {
+    color: #4b4efc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+label a:hover {
+    text-decoration: underline;
+}
+
+/* Pulsanti */
+button {
+    background-color: #4b4efc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    margin: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3a3dca;
+}
+
+/* Griglia dei cocktail */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Distanza tra i div */
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+/* Link SEE MORE */
+a button {
+    margin-top: 20px;
+}

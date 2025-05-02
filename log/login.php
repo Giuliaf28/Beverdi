@@ -1,34 +1,49 @@
 <?php
-if(!isset($_SESSION))
+if (!isset($_SESSION)) {
     session_start();
+}
 
-    if(isset($_GET['msg'])){
-        echo "<h1 class=msg>".$_GET['msg']."</h1>";
-    }
+$msg = "";
+if (isset($_GET['msg'])) {
+    $msg = htmlspecialchars($_GET['msg']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <script src="log.js"></script>
+    <script src="log.js" defer></script>
+    <link rel="stylesheet" href="../css/regStyle.css">
 </head>
 <body>
 
-<h2>Login</h2>
+<div class="container">
+    <h2>Login</h2>
 
-<form id="loginForm" action="gestoreLogin.php" method="post">
-    <label>Username:
-        <input type="text" name="username">
-    </label><br><br>
+    <?php if ($msg): ?>
+        <div class="msg"><?php echo $msg; ?></div>
+    <?php endif; ?>
 
-    <label>Password:
-        <input type="password" name="password">
-        <button type="button" id="toggleLoginPassword" onclick="mostraPassword()">👁️</button>
-    </label><br><br>
+    <form id="loginForm" action="gestoreLogin.php" method="post">
+        <label>Username:
+            <input type="text" name="username" required>
+        </label>
 
-    <input type="submit" value="Accedi">
-</form>
+        <label>Password:
+            <input type="password" name="password" required>
+            <button type="button" id="toggleLoginPassword" onclick="mostraPassword()">👁️</button>
+        </label>
+
+        <input type="submit" value="Accedi">
+    </form>
+
+    <div class="link">
+        <label>Non hai un account?</label>
+        <a href="registrati.php">Registrati</a><br><br>
+        <label>Torna ai <a href="../index.php">cocktails</a></label>
+    </div>
+</div>
 
 </body>
 </html>

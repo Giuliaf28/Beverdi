@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (toggleLoginPassword) {
         toggleLoginPassword.addEventListener("click", () => mostraPassword("password"));
     }
+
 });
 
 function mostraPassword(inputName) {

@@ -13,7 +13,7 @@ if(!isset($_SESSION))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beverdì</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/indexStyle.css">
    <script src="ajax/main.js"></script>
 
 </head>
@@ -22,7 +22,7 @@ if(!isset($_SESSION))
     <h1>Benvenuto al Beverdì</h1>
     <h3>Qui troverai un quantitativo sufficiente di cockatail per sceglierne uno diverso dal Gin Lemon</h3>
     <label for="">Accedi per poter (salvare i tuoi cocktail preferiti e )per sbloccare la modalità party </label><a href="log/login.php"><button>ACCEDI!</button></a><br>
-    <label for="">Non hai un account? <a href="log/registrati.php">Registrati</a> </label>
+    <label for="">Non hai un account? </label> <a href="log/registrati.php"><button>REGISTRATI!</button></a><br>
     <div id="container"></div>
     <a href="free_access/allCockails.php"><button>see more</button></a>
 </body>

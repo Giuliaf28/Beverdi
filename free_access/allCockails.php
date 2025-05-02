@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Cocktails</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/aCStyle.css">
     <script>
-
-
         document.addEventListener("DOMContentLoaded", function () {
 
             let container = document.getElementById("container");
@@ -31,13 +29,9 @@
                                 let div = document.createElement("div");
                                 div.className = "drink";
                                 div.id = drink.idDrink;
-                                div.style.background = "lightblue";
-                                div.style.margin = "10px";
-                                div.style.borderRadius = "10px";
-                                div.style.borderColor = "black";
-                                div.style.borderWidth = "3px";
-                                div.style.borderStyle = "solid";
-                                div.style.textAlign = "center";
+                                div.addEventListener("click", function () {
+                                    window.location.href = "../log_only/cocktail.php?id=" + drink.idDrink;
+                                });
 
                                 div.innerHTML = `
                             <h2>${drink.strDrink}</h2>
