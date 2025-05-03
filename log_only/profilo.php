@@ -7,7 +7,7 @@ if (isset($_GET['msg'])) {
 }
 
 if (!isset($_SESSION['username'])) {
-    header("Location: log/login.php?msg=Accedi per visualizzare il tuo profilo!");
+    header("Location: ../log/login.php?msg=Accedi per visualizzare il tuo profilo!");
     exit();
 }
 
@@ -18,7 +18,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/profileStyle.css">
+    <link rel="stylesheet" href="../css/profStyle.css">
     <title>Benvenuto nel tuo profilo!</title>
 </head>
 
@@ -26,7 +26,7 @@ if (!isset($_SESSION['username'])) {
     <div id="container">
 
         <?php
-        echo "<img src=img/$_SESSION[pfp] alt=img_profilo style=width: 200px; height: 200px; border-radius: 50%;><br>";
+        echo "<img src=$_SESSION[pfp] alt=img_profilo style=width: 200px; height: 200px; border-radius: 50%;><br>";
         ?>
 
         <div id="divModifica">
@@ -50,9 +50,19 @@ if (!isset($_SESSION['username'])) {
                     <input type="date" name="dataNascita" value="<?php echo $_SESSION['dataNascita']; ?>">
                 </label><br><br>
 
-                <label>Foto profilo:
-                    <input type="file" name="fotop" accept=".jpg, .jpeg, .png">
-                </label><br><br>
+                <label for="fotop">Foto profilo:</label>
+                <select name="fotop" id="fotop">
+                    <option value=""></option>
+                    <?php
+
+                    $directory = '../img/';
+                    $images = ["beer", "champagne", "cocktail", "drink", "man", "man2", "woman", "woman2"];
+
+                    foreach ($images as $image) {
+                        echo "<option value='" . $directory . $image . ".png'>" . $image . "</option>";
+                    }
+                    ?>
+                </select>
 
                 <input type="submit" value="Modifica Profilo">
             </form>
@@ -63,14 +73,11 @@ if (!isset($_SESSION['username'])) {
             <label>Qui puoi trovare tutti i Party che hai salvato</label>
         </div>
 
-
-
-
-        <div id="preferiti"></div>
+        <div id="preferiti">
             <h3>Ecco i tuoi cocktails preferiti!</h3>
-            
-        </div>    
-        <a href="log/logout.php"><button>Logout</button></a>
+        </div>
+    </div>
+    <a href="../log/logout.php"><button>Logout</button></a>
     </div>
 </body>
 

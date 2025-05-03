@@ -30,7 +30,7 @@ if (!$user) {
     $_SESSION['id'] = $user['id'];
     $_SESSION['dataNascita'] = $user['data_nascita'];
     $_SESSION['pfp'] = $user['pfp'];
-    header("Location: ../profilo.php?msg=Benvenuto $username !");
+    header("Location: ../free_access/allCockails.php?msg=Benvenuto $username !");
     //echo "Benvenuto " . $_SESSION['username'];
     exit();
 }

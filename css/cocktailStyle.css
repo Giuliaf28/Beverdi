@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e3f;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Titolo */
+.nomeCocktail {
+    font-size: 2.5rem;
+    color: #d1d3ff;
+    margin-bottom: 10px;
+}
+
+/* Immagine del cocktail */
+.imgCocktail {
+    border-radius: 12px;
+    box-shadow: 0 0 12px #00000055;
+    margin-bottom: 20px;
+}
+
+/* Container principale */
+#container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #2b2d63;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #00000055;
+}
+
+/* Sezione informazioni cocktail */
+#infoCockatail {
+    background-color: #35377b;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Tabella ingredienti */
+#tabellaIngredienti {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#tabellaIngredienti th, 
+#tabellaIngredienti td {
+    padding: 10px;
+    border: 1px solid #5c5edc;
+}
+
+#tabellaIngredienti th {
+    background-color: #5c5edc;
+    color: white;
+    font-size: 1.1rem;
+}
+
+#tabellaIngredienti img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Etichette info */
+#infoCockatail label {
+    font-weight: bold;
+    color: #d1d3ff;
+}
+
+#infoCockatail span {
+    margin-left: 5px;
+    font-style: italic;
+    color: #ffffff;
+}
+
+/* Istruzioni */
+#istruzioni {
+    background-color: #35377b;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+#istruzioni h2 {
+    color: #d1d3ff;
+    margin-bottom: 10px;
+}
+
+#strIstruzioni {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Pulsanti bandiere lingua */
+button.lingua {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.2s;
+}
+
+button.lingua img {
+    width: 35px;
+    height: 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00000055;
+}
+
+button.lingua:hover {
+    transform: scale(1.1);
+}
+
+a > button {
+    background-color: #5c5edc;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+a > button:hover {
+    background-color: #7779f0;
+    transform: scale(1.05);
+}
+
+#tabellaIngredienti img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+#tabellaIngredienti img:hover {
+    transform: scale(1.8);
+    z-index: 2;
+}
+

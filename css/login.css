@@ -1,0 +1,109 @@
+/* Sfondo e font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #2b2d70, #3e1f78);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Contenitore centrale */
+.container {
+    background-color: #3e3d8a;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Titolo */
+.container h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Form */
+form label {
+    display: block;
+    margin: 15px 0 5px;
+    text-align: left;
+    color: #e0e0ff;
+    font-weight: bold;
+}
+
+form input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 1rem;
+}
+
+form input[type="submit"] {
+    background-color: #6c63ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #867aff;
+}
+
+/* Occhio password */
+button#togglePassword,
+button#toggleLoginPassword {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: -42px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Messaggio errore */
+.msg {
+    background-color: #ff9999;
+    color: #2b2b2b;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Link */
+.link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #ccccff;
+}
+
+.link a {
+    color: #aad4ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+/* Selettore immagine */
+#pfpContainer select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+}

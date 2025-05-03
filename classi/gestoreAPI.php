@@ -1,6 +1,7 @@
 <?php
 final class gestoreAPI
 {
+
     function searchByName($name)
     {
 

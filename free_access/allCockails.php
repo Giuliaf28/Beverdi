@@ -73,7 +73,13 @@
 </head>
 
 <body>
-    <h1>All Cocktails</h1>
+    <div id="header">
+
+        <a href="../log_only/profilo.php"><label for="">Accedi la tuo profilo</label></a>
+        <h1>All Cocktails</h1>
+        <a href="../log/registrati.php"><label for="">Registrati</label></a>
+    </div>
+
     <input type="text" name="searchBar" id="searchBar" placeholder="Cerca un cocktail..."><button
         id="btnRicerca">cerca</button>
     <div id="container">

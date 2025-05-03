@@ -3,10 +3,11 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$msg = "";
+$msg = ""; 
 if (isset($_GET['msg'])) {
     $msg = htmlspecialchars($_GET['msg']);
 }
+ 
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -14,7 +15,7 @@ if (isset($_GET['msg'])) {
     <meta charset="UTF-8">
     <title>Login</title>
     <script src="log.js" defer></script>
-    <link rel="stylesheet" href="../css/regStyle.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 

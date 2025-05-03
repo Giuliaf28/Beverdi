@@ -1,105 +1,86 @@
-
-#drink {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    border: 3px solid black; /* Combined border properties */
-    text-align: center; /* Center the text */
-    display: flex; /* Added to center text vertically */
-
-}
-
-
-/* Reset di base */
-* {
-    box-sizing: border-box;
+/* Reset base */
+body {
     margin: 0;
     padding: 0;
-}
-
-body {
+    background: linear-gradient(to right, #2b2d70, #3e1f78);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #d4d9ff, #f0e9ff);
-    color: #2d2d44;
-    min-height: 100vh;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    color: #ffffff;
     text-align: center;
+    min-height: 100vh;
 }
 
 /* Titolo principale */
 h1 {
-    font-size: 2.5rem;
-    color: #4b4efc;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-top: 40px;
+    color: #ffffff;
 }
 
 /* Sottotitolo */
 h3 {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #444b77;
-}
-
-/* Messaggio da GET */
-.msg {
-    background-color: #e0e7ff;
-    color: #3c3c78;
-    border: 1px solid #c4d0ff;
-    padding: 10px 20px;
-    border-radius: 8px;
+    font-size: 1.4rem;
     margin-bottom: 20px;
-    width: 100%;
-    max-width: 500px;
+    color: #e0e0ff;
 }
 
-/* Etichette */
+/* Messaggio in arrivo da $_GET['msg'] */
+.msg {
+    color: #ffcccc;
+    background-color: #5c3d9b;
+    padding: 15px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+/* Testi + bottoni accedi/registrati */
 label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 1rem;
-    color: #333;
+    display: inline-block;
+    margin: 15px 5px 5px 0;
+    font-size: 1.1rem;
+    color: #f2f2ff;
 }
 
-label a {
-    color: #4b4efc;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-label a:hover {
-    text-decoration: underline;
-}
-
-/* Pulsanti */
 button {
-    background-color: #4b4efc;
+    background-color: #6c63ff;
     color: white;
     border: none;
-    border-radius: 25px;
-    padding: 12px 24px;
-    margin: 12px;
+    padding: 10px 25px;
+    margin: 10px 5px;
+    border-radius: 10px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #3a3dca;
+    background-color: #867aff;
 }
 
-/* Griglia dei cocktail */
+/* Container drink */
 #container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Distanza tra i div */
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
 }
 
+/* Singolo cocktail */
+.drink {
+    background-color: #3c3f8f;
+    border-radius: 15px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
 
-/* Link SEE MORE */
-a button {
-    margin-top: 20px;
+.drink:hover {
+    transform: scale(1.05);
+}
+
+/* Immagini cocktail */
+.drink img {
+    width: 100%;
+    border-radius: 10px;
 }
