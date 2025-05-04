@@ -33,7 +33,7 @@ if (isset($_GET['msg'])) {
 
         <label>Password:
             <input type="password" name="password" required>
-            <button type="button" id="toggleLoginPassword" onclick="mostraPassword()">👁️</button>
+            <button type="button" id="togglePassword" onclick="mostraPassword()">👁️</button>
         </label>
 
         <input type="submit" value="Accedi">

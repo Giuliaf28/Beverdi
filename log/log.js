@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const loginForm = document.getElementById("loginForm");
     const toggleRegPassword = document.getElementById("togglePassword");
     const toggleLoginPassword = document.getElementById("toggleLoginPassword");
+    const toggleModPassword = document.getElementById("toggleModPassword");
 
     if (regForm) {
         regForm.addEventListener("submit", controlloValoriReg);
@@ -18,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (toggleLoginPassword) {
         toggleLoginPassword.addEventListener("click", () => mostraPassword("password"));
+    }
+
+    if (toggleModPassword) {
+        toggleModPassword.addEventListener("click", () => mostraPassword("currentPassword"));
     }
 
 });

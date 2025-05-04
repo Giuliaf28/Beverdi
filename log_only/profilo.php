@@ -20,8 +20,11 @@ if (!isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/profStyle.css">
     <title>Benvenuto nel tuo profilo!</title>
+    <script src="../log/log.js"></script>
 </head>
+<script>
 
+</script>
 <body>
     <div id="container">
 
@@ -37,24 +40,23 @@ if (!isset($_SESSION['username'])) {
                     <input type="text" name="username" value="<?php echo $_SESSION['username']; ?>">
                 </label><br><br>
 
-                <label>Password:
-                    <input type="password" name="password">
-                    <button type="button" id="togglePassword">👁️</button>
+                <label>Password corrente:
+                    <input type="password" name="currentPassword" id="currentPassword">
+                    <button type="button" id="toggleModPassword">👁️</button>
                 </label><br><br>
 
-                <label>Conferma Password:
-                    <input type="password" name="password2">
+                <label>Nuova Password:
+                    <input type="password" name="nuovaPassword">
                 </label><br><br>
 
                 <label>Data di nascita:
-                    <input type="date" name="dataNascita" value="<?php echo $_SESSION['dataNascita']; ?>">
+                    <input type="date" name="dataNascita" value="<?php echo $_SESSION['dataNascita']; ?> min='1900-01-01' max="<?php echo date('Y-m-d'); ?>">
                 </label><br><br>
 
                 <label for="fotop">Foto profilo:</label>
                 <select name="fotop" id="fotop">
-                    <option value=""></option>
+                    <option value="">Scegli una foto profilo</option>
                     <?php
-
                     $directory = '../img/';
                     $images = ["beer", "champagne", "cocktail", "drink", "man", "man2", "woman", "woman2"];
 
@@ -77,7 +79,8 @@ if (!isset($_SESSION['username'])) {
             <h3>Ecco i tuoi cocktails preferiti!</h3>
         </div>
     </div>
-    <a href="../log/logout.php"><button>Logout</button></a>
+        <a href="../log/logout.php"><button>Logout</button></a>
+        <a href="../free_access/allCockails.php"><button>Vai alla home</button></a>
     </div>
 </body>
 
