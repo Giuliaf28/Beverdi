@@ -103,6 +103,32 @@ final class gestoreAPI
         return $url;
     }
 
+    function getListaIngredienti()
+    {
+        $url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
+        $response = file_get_contents($url);
+        return json_decode($response, true);
+    }
+    function getListaCategorie()
+    {
+        $url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list";
+        $response = file_get_contents($url);
+        return json_decode($response, true);
+    }
+
+    function getListaBicchieri()
+    {
+        $url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list";
+        $response = file_get_contents($url);
+        return json_decode($response, true);
+    }
+    function getListaAlcolici()
+    {
+        $url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list";
+        $response = file_get_contents($url);
+        return json_decode($response, true);
+    }
+
 
 }
 

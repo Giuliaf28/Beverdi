@@ -97,12 +97,9 @@ $datascocktail = $gestoreAPI->searchById($idCocktail);
 
             <label for="">Bicchiere: </label><span><?php echo $bicchiereCocktail; ?></span><br>
             <label for="">Categoria: </label><span><?php echo $categoriaCocktail; ?></span><br>
-            <label for="">Alcolico: </label><span><?php if ($isAlcolico)
-
+            <label for="">Alcolico: </label><span><?php if ($isAlcolico=="Alcoholic")
                 echo "Sì";
-            else
-                echo "No"; ?></span><br>
-
+            else echo "No"; ?></span><br>
         </div>
 
 
