@@ -38,6 +38,8 @@ $q="INSERT INTO ricette (nome, categoria, livello_alcool, bicchiere, ingredienti
 $stmt = $conn->prepare($q);
 $stmt->bind_param("sssssi", $nomeRicetta, $categoria, $alcool, $bicchiere, $ingredienti, $_SESSION["id_utente"]);
 $stmt->execute();
+$stmt->close();
 
-
+header("Location: ../profilo.php?msg=Ricetta creata con successo");
+exit;
 ?>

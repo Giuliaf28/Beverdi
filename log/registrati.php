@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (isset($_SESSION['username'])) {
+    session_unset();
+}
+?><!DOCTYPE html>
 <html lang="it">
 
 <head>

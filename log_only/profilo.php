@@ -22,9 +22,7 @@ if (!isset($_SESSION['username'])) {
     <title>Benvenuto nel tuo profilo!</title>
     <script src="../log/log.js"></script>
 </head>
-<script>
 
-</script>
 <body>
     <div id="container">
 
@@ -50,7 +48,7 @@ if (!isset($_SESSION['username'])) {
                 </label><br><br>
 
                 <label>Data di nascita:
-                    <input type="date" name="dataNascita" value="<?php echo $_SESSION['dataNascita']; ?> min='1900-01-01' max="<?php echo date('Y-m-d'); ?>">
+                    <input type="date" name="dataNascita" value="<?php echo isset($_SESSION['dataNascita']) ? date('Y-m-d', strtotime($_SESSION['dataNascita'])) : ''; ?>" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>">
                 </label><br><br>
 
                 <label for="fotop">Foto profilo:</label>
@@ -70,17 +68,9 @@ if (!isset($_SESSION['username'])) {
             </form>
         </div>
 
-        <div id="storicoParty">
-            <h3>Storico dei Party!</h3>
-            <label>Qui puoi trovare tutti i Party che hai salvato</label>
-            <a href="mods/creaParty.php"><button>part</button></a>
-
-            <div id="party"></div>
-        </div>
-
         <div id="ricette">
             <h3>Ecco le tue ricette!</h3>
-            <a href="mods/creaRicetta.php"><button>ricet</button></a>
+            <a href="mods/storicoRicette.php"><button>Vedi</button></a>
         </div>
     </div>
         <a href="../log/logout.php"><button>Logout</button></a>

@@ -77,7 +77,7 @@
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(() => {
           cercaCocktail(searchBar.value);
-        }, 400);
+        }, 200);
       });
 
       getAllDrinks(); // Carica inizialmente tutti i cocktail
