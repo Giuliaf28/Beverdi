@@ -27,7 +27,7 @@ if (!$user) {
 } else {
     // Utente trovato
     $_SESSION['username'] = $user['username'];
-    $_SESSION['id'] = $user['id'];
+    $_SESSION['id_utente'] = $user['id'];
     $_SESSION['dataNascita'] = $user['data_nascita'];
     $_SESSION['pfp'] = $user['pfp'];
     header("Location: ../free_access/allCockails.php?msg=Benvenuto $username !");

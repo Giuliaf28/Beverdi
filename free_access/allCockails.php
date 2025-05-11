@@ -1,90 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Cocktails</title>
-    <link rel="stylesheet" href="../css/aCStyle.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Cocktails</title>
+  <link rel="stylesheet" href="../css/aCStyle.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("container");
+      const searchBar = document.getElementById("searchBar");
 
-            let container = document.getElementById("container");
-            let btnRicerca = document.getElementById("btnRicerca");
-            let searchBar = document.getElementById("searchBar");
-            async function getAllDrinks() {
-                let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+      let debounceTimeout = null;
 
-                for (const lettera of alfabeto) {
-                    let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + lettera;
-                    try {
+      function mostraDrinks(drinks) {
+        container.innerHTML = "";
+        if (!drinks || drinks.length === 0) {
+          container.innerHTML = "<p>Nessun cocktail trovato.</p>";
+          return;
+        }
 
-                        let response = await fetch(url);
-                        let data = await response.json();
-                        let drinks = data.drinks;
+        for (const drink of drinks) {
+          const div = document.createElement("div");
+          div.className = "drink";
+          div.id = drink.idDrink;
+          div.addEventListener("click", function () {
+            window.location.href = "../log_only/cocktail.php?id=" + drink.idDrink;
+          });
 
-                        console.log(drinks); // Mostra i drink nella console
-                        if (drinks) {
-                            for (const drink of drinks) {
-                                let div = document.createElement("div");
-                                div.className = "drink";
-                                div.id = drink.idDrink;
-                                div.addEventListener("click", function () {
-                                    window.location.href = "../log_only/cocktail.php?id=" + drink.idDrink;
-                                });
+          div.innerHTML = `
+            <h2>${drink.strDrink}</h2>
+            <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" width="300">
+          `;
+          container.appendChild(div);
+        }
+      }
 
-                                div.innerHTML = `
-                            <h2>${drink.strDrink}</h2>
-                            <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" width="300">
-                        `;
-                                container.appendChild(div);
-                            }
-                        } else {
-                            console.log("Nessun drink trovato per la lettera " + lettera);
-                        }
-                    } catch (error) {
-                        console.error("Errore durante il recupero dei dati:", error);
-                    }
-                }
+      async function getAllDrinks() {
+        container.innerHTML = "";
+        const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+        let allDrinks = [];
 
+        for (const lettera of alfabeto) {
+          const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=" + lettera;
+          try {
+            const response = await fetch(url);
+            const data = await response.json();
+            if (data.drinks) {
+              allDrinks.push(...data.drinks);
             }
+          } catch (error) {
+            console.error("Errore nel caricamento dei drink:", error);
+          }
+        }
 
-            btnRicerca.addEventListener("click", function () {
-                let searchValue = searchBar.value.toLowerCase();
-                let drinks = document.querySelectorAll(".drink");
+        mostraDrinks(allDrinks);
+      }
 
-                drinks.forEach(drink => {
-                    let drinkName = drink.querySelector("h2").innerText.toLowerCase();
-                    if (drinkName.includes(searchValue)) {
-                        drink.style.display = "block";
-                    } else {
-                        drink.style.display = "none";
-                    }
-                });
-            });
-            getAllDrinks();
+      async function cercaCocktail(nome) {
+        if (nome.trim() === "") {
+          getAllDrinks();
+          return;
+        }
 
+        const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + encodeURIComponent(nome);
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          mostraDrinks(data.drinks);
+        } catch (error) {
+          container.innerHTML = "<p>Errore durante la ricerca.</p>";
+        }
+      }
 
+      // Ricerca automatica mentre si digita (con debounce)
+      searchBar.addEventListener("input", function () {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+          cercaCocktail(searchBar.value);
+        }, 400);
+      });
 
-        });
-
-
-    </script>
+      getAllDrinks(); // Carica inizialmente tutti i cocktail
+    });
+  </script>
 </head>
 
 <body>
-    <div id="header">
+  <div id="header">
+    <a href="../log_only/profilo.php"><label>Accedi al tuo profilo</label></a>
+    <h1>All Cocktails</h1>
+    <a href="../log/registrati.php"><label>Registrati</label></a>
+  </div>
 
-        <a href="../log_only/profilo.php"><label for="">Accedi la tuo profilo</label></a>
-        <h1>All Cocktails</h1>
-        <a href="../log/registrati.php"><label for="">Registrati</label></a>
-    </div>
-
-    <input type="text" name="searchBar" id="searchBar" placeholder="Cerca un cocktail..."><button
-        id="btnRicerca">cerca</button>
-    <div id="container">
-
-    </div>
+  <input type="text" name="searchBar" id="searchBar" placeholder="Cerca un cocktail..." />
+  <div id="container"></div>
 </body>
-
 </html>

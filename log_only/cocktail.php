@@ -84,9 +84,17 @@ $datascocktail = $gestoreAPI->searchById($idCocktail);
                     <th></th>
                 </tr>
                 <?php
+                
                 for ($i = 0; $i < count($ingredientiCocktail); $i++) {
+
                     echo "<tr>";
-                    echo "<td>" . $quantitaIngredientiCocktail[$i] . "</td>";
+                    echo "<td>";
+                    if (isset($quantitaIngredientiCocktail[$i]) && $quantitaIngredientiCocktail[$i] != "") {
+                        echo $quantitaIngredientiCocktail[$i];
+                    } else {
+                        echo "";
+                    }
+                    echo "</td>";
                     echo "<td>" . $ingredientiCocktail[$i] . "</td>";
                     echo "<td>" . "<img src='" . $gestoreRicetta->getImgIngrediente($ingredientiCocktail[$i]) . "'>" . "</td>";
                     echo "</tr>";

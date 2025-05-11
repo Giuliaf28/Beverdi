@@ -23,61 +23,63 @@ $listaBicchieri = $gestoreApi->getListaBicchieri();
 
 <body>
     <div id="container">
-    <h1>Crea la tua ricetta</h1><br><br>
-    <form action="nuovaRicetta.php" method="get">
+        <h1>Crea la tua ricetta</h1><br><br>
+        <form action="nuovaRicetta.php" method="get">
 
-        <label for="">Nome ricetta: </label><input type="text" name="nomeRicetta" id="nomeRicetta">
+            <label for="">Nome ricetta: </label><br><input type="text" name="nomeRicetta" id="nomeRicetta">
 
 
-        <div id="selects">
-            <h2>Categorie Cocktail</h2>
-            <select name="categorie" id="categorie">
+            <div id="selects">
+                <h2>Categorie Cocktail</h2>
+                <select name="categorie" id="categorie">
+                    <?php
+                    foreach ($listaCategorie["drinks"] as $c) {
+                        echo "<option>" . $c["strCategory"] . "</option>";
+                    }
+                    ?>
+                </select>
+
+                <h2>Alcolico</h2>
+                <select name="alcool" id="alcool">
+                    <?php
+                    foreach ($listaAlcool["drinks"] as $a) {
+                        echo "<option>" . $a["strAlcoholic"] . "</option>";
+                    }
+                    ?>
+                </select>
+
+                <h2>Bicchiere</h2>
+                <select id="bicchieriDisponibili" name="bicchieriDisponibili">
+                    <?php
+                    foreach ($listaBicchieri["drinks"] as $bicchiere) {
+
+                        echo "<option>" . $bicchiere["strGlass"] . "</option><br>";
+                    }
+
+                    ?>
+                </select>
+            </div>
+
+            <h2>Ingredienti disponibili</h2>
+            <div id="ingredientiDisponibili">
+
                 <?php
-                foreach ($listaCategorie["drinks"] as $c) {
-                    echo "<option>" . $c["strCategory"] . "</option>";
-                }
-                ?>
-            </select>
-
-            <h2>Alcolico</h2>
-            <select name="alcool" id="alcool">
-                <?php
-                foreach ($listaAlcool["drinks"] as $a) {
-                    echo "<option>" . $a["strAlcoholic"] . "</option>";
-                }
-                ?>
-            </select>
-
-            <h2>Bicchiere</h2>
-            <select id="bicchieriDisponibili">
-                <?php
-                foreach ($listaBicchieri["drinks"] as $bicchiere) {
-
-                    echo "<option>" . $bicchiere["strGlass"] . "</option><br>";
+                foreach ($listaIngredienti["drinks"] as $ingrediente) {
+                    $nome = $ingrediente["strIngredient1"];
+                    echo "<div id=$nome>";
+                    echo "<label>" . $nome . "</label>";
+                    echo " - quantità: <input type=number name=$nome id=$nome min=0 max=500> cl";
+                    echo "</div>";
                 }
 
                 ?>
-            </select>
-        </div>
+            </div>
 
-        <div id="ingredientiDisponibili">
-            <h2>Ingredienti disponibili</h2><br>
-            <?php
-            foreach ($listaIngredienti["drinks"] as $ingrediente) {
-                $nome = $ingrediente["strIngredient1"];
-                echo "<div id=$nome>";
-                echo "<label>" . $nome . "</label>";
-                echo " - quantità: <input type=number name=quantita.$nome id=quantita.$nome>";
-                echo "</div>";
-            }
+            <input type="submit" value="Crea!">
 
-            ?>
-        </div>
-
-        <input type="submit" value="Crea!">
-
-    </form>
-    <a href="../../free_access/allCockails.php"><button>Torna alla home</button></a><a href="../profilo.php"><button>Torna al profilo</button></a>
+        </form>
+        <a href="../../free_access/allCockails.php"><button>Torna alla home</button></a><a
+            href="../profilo.php"><button>Torna al profilo</button></a>
     </div>
 </body>
 
