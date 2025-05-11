@@ -73,14 +73,14 @@ if (!isset($_SESSION['username'])) {
         <div id="storicoParty">
             <h3>Storico dei Party!</h3>
             <label>Qui puoi trovare tutti i Party che hai salvato</label>
-            <a href="/modalita_aggiuntive/creaParty.php"><button>ricet</button></a>
+            <a href="mods/creaParty.php"><button>part</button></a>
 
             <div id="party"></div>
         </div>
 
         <div id="ricette">
             <h3>Ecco le tue ricette!</h3>
-            <a href="/modalita_aggiuntive/creaRicetta.php"><button>ricet</button></a>
+            <a href="mods/creaRicetta.php"><button>ricet</button></a>
         </div>
     </div>
         <a href="../log/logout.php"><button>Logout</button></a>

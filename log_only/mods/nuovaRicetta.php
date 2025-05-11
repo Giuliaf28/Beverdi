@@ -1,0 +1,4 @@
+<?php
+
+$datiNuovoCocktail=$_GET;
+?>
