@@ -1,6 +1,7 @@
 <?php
 if (!isset($_SESSION))
     session_start();
+
 require_once '../../log/conn.php';
 require_once '../../classi/gestoreAPI.php';
 

@@ -37,7 +37,7 @@
 
       async function getAllDrinks() {
         container.innerHTML = "";
-        const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+        const alfabeto = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
         let allDrinks = [];
 
         for (const lettera of alfabeto) {

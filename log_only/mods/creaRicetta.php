@@ -1,6 +1,16 @@
 <?php
 if (!isset($_SESSION))
     session_start();
+
+if (isset($_GET['msg'])) {
+    echo "<h1 class=msg>" . $_GET['msg'] . "</h1>";
+}
+
+if (!isset($_SESSION['username'])) {
+    header("Location: ../log/login.php?msg=Devi essere loggato per accedere a questa pagina");
+    exit();
+}
+
 require_once("../../classi/gestoreAPI.php");
 $gestoreApi = new gestoreAPI();
 

@@ -1,6 +1,5 @@
 <?php
-session_start(); // 1. Mancava questo!
-
+session_start(); 
 require_once 'conn.php';
 
 $username = $_POST['username'];
